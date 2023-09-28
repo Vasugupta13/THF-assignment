@@ -60,10 +60,13 @@ class EventListPortrait extends StatelessWidget {
             Obx(
                   () {
                 if (eventsController.eventDataList.isEmpty) {
-                  return const SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
+                  return SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
+                        const CircularProgressIndicator(),
+                      ],
+                    )
                   );
                 } else {
                   return SliverList(

@@ -22,7 +22,12 @@ class EventDetailsLandscapeTablet extends StatelessWidget {
           init: EventDetailsController(eventId: eventId),
           builder: (eventDetailsController) {
             if (eventDetailsController.isLoading) {
-              return const CircularProgressIndicator();
+              return Column(
+                children: [
+                  SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
+                  const CircularProgressIndicator(),
+                ],
+              );
             } else if (eventDetailsController.eventDetails != null) {
               final eventDetails = eventDetailsController.eventDetails!;
               final inputDate =eventDetails.content?.data?.dateTime! ;

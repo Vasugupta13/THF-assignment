@@ -103,9 +103,12 @@ class EventSearchLandscapeTablet extends StatelessWidget {
             Obx(
                   () {
                 if (eventSearchController.isLoadingValue) {
-                  return const SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
+                  return SliverToBoxAdapter(
+                    child:Column(
+                      children: [
+                        SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
+                        const CircularProgressIndicator(),
+                      ],
                     ),
                   );
                 }else if(eventSearchController.eventDataList.isEmpty){
@@ -116,7 +119,7 @@ class EventSearchLandscapeTablet extends StatelessWidget {
                           SizedBox(
                             height: height * 0.4,
                           ),
-                          const Center(child: ReusableText(text: 'No Events Found',color: AppColors.kSecondaryTextColor,fontSize: 30,fontWeight: FontWeight.w500,)),
+                          const Center(child: ReusableText(text: 'No Events Found',color: AppColors.kSecondaryTextColor,fontSize: 35,fontWeight: FontWeight.w500,)),
                         ],
                       );
                     },childCount: 1,

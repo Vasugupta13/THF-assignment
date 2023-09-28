@@ -104,15 +104,23 @@ class EventSearchLandscape extends StatelessWidget {
             Obx(
                   () {
                 if (eventSearchController.isLoadingValue) {
-                  return const SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
+                  return SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
+                        const CircularProgressIndicator(),
+                      ],
+                    )
                   );
                 }else if(eventSearchController.eventDataList.isEmpty){
                   return SliverList(delegate: SliverChildBuilderDelegate(
                         (context, index){
-                      return const Center( child: ReusableText(text: 'No Events Found'));
+                      return Column(
+                        children: [
+                          SizedBox(height: height * 0.2,),
+                          const Center( child: ReusableText(text: 'No Events Found',fontWeight: FontWeight.w500, fontSize: 25,color: AppColors.kSecondaryTextColor,),),
+                        ],
+                      );
                     },childCount: 1,
                   ));
                 } else {
