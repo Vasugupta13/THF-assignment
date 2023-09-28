@@ -112,7 +112,7 @@ class EventListLandscapeTablet extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 20,right: 30,top: 10,bottom: 10),
                                     child: Container(
-                                      width: width * 0.15,
+                                      width: width * 0.13,
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(12),
                                           image: DecorationImage(
@@ -122,7 +122,9 @@ class EventListLandscapeTablet extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  Container(
+                                    height: height * 0.18,
+                                    width: width * 0.45,
                                     child: Padding(
                                       padding: const EdgeInsets.only(left: 5,right: 10,top: 10,bottom: 0),
                                       child: Column(

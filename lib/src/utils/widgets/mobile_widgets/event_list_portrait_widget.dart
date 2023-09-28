@@ -61,12 +61,12 @@ class EventListPortrait extends StatelessWidget {
                   () {
                 if (eventsController.eventDataList.isEmpty) {
                   return SliverToBoxAdapter(
-                    child: Column(
-                      children: [
-                        SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
-                        const CircularProgressIndicator(),
-                      ],
-                    )
+                      child: Column(
+                        children: [
+                          SizedBox(height: MediaQuery.sizeOf(context).height * 0.4,),
+                          const CircularProgressIndicator(),
+                        ],
+                      )
                   );
                 } else {
                   return SliverList(
@@ -83,7 +83,7 @@ class EventListPortrait extends StatelessWidget {
                                 Get.to(EventDetailsMobileUI(eventId: event.id!));
                               },
                               child: Container(
-                                height: height * 0.16,
+                                height: height * 0.15,
                                 width: width * 0.89,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
@@ -102,7 +102,7 @@ class EventListPortrait extends StatelessWidget {
                                 ),child: Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 10),
+                                    padding: const EdgeInsets.only(left: 10,right: 10,top: 10,bottom:10),
                                     child: Container(
                                       width: width * 0.22,
                                       decoration: BoxDecoration(
@@ -114,7 +114,9 @@ class EventListPortrait extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  Container(
+                                    height: height * 0.16,
+                                    width: width * 0.6,
                                     child: Padding(
                                       padding: const EdgeInsets.only(left: 5,right: 10,top: 10,bottom: 10),
                                       child: Column(

@@ -124,7 +124,9 @@ class EventListPortraitTablet extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  Container(
+                                    height:height * 0.18,
+                                    width: width * 0.58,
                                     child: Padding(
                                       padding: const EdgeInsets.only(left: 5,right: 10,top: 15,bottom: 10),
                                       child: Column(

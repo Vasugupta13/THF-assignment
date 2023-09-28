@@ -115,7 +115,9 @@ class EventListLandscape extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  Container(
+                                    height: height * 0.4,
+                                    width: width * 0.45,
                                     child: Padding(
                                       padding: const EdgeInsets.only(left: 5,right: 10,top: 15),
                                       child: Column(
